@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duc AI Blog Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to { 
+                transform: rotate(360deg);
+            }
+        }
+         
+        
+         @-webkit-keyframes rotate {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to { 
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        
+        .load {
+            width: 100px;
+            height: 100px;
+            margin: 110px auto 0;
+            border:solid 10px #c8abc6;
+            border-radius: 50%;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+             -webkit-transition: all 0.5s ease-in;
+            -webkit-animation-name:             rotate; 
+            -webkit-animation-duration:         1.0s; 
+            -webkit-animation-iteration-count:  infinite;
+            -webkit-animation-timing-function: linear;
+                
+                 transition: all 0.5s ease-in;
+            animation-name:             rotate; 
+            animation-duration:         1.0s; 
+            animation-iteration-count:  infinite;
+            animation-timing-function: linear; 
+        }
+    </style>
+
+</head>
+<body class="flex flex-col min-h-screen bg-blue-100 font-sans antialis">
+    <!--Nav bar-->
+    <nav class="bg-purple-100 shadow-lg p-5 flex justify-between font-mono">
+        <div>
+            <h1 class="w-full flex-none text-2xl leading-7 mb-2 font-bold">
+                Duc AI blog generator
+            </h1>
+        </div>
+        <div>
+            <a href="#"><button class=" transform hover:scale-110 motion-reduce:transform-none hover:text-pink-700">Logout</button></a>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <div class="flex-grow container mx-auto mt-10 px-4 sm:px-0">
+        <div class="max-w-3xl mx-auto bg-white p-7 rounded-lg shadow-2xl transition-transform transform hover:scale-105 flex flex-col">
+
+            <!-- Intro -->
+            <div class="text-center">
+                <h2 class="text-2xl font-semibold mb-4">Unique experience of Duc's AI blog generator - You are the first one</h2>
+                <p class="text-pink-900">
+                    Generate high quality blogs from Youtube videos using artificial intelligence <br>
+                    Simply enter the Youtube link
+                </p>
+            </div>
+
+            <br>
+            <!-- Youtube section -->
+            <div>
+                <h2 class="text-xl mb-4 font-semibold">Enter YouTube Video link</h2>
+                <div class="flex space-x-4">
+                    <input class="flex-grow p-3 border border-purple-300 rounded-l-md" type="url" id="youtubeLink" placeholder="Paste YouTube link...">
+                    <button class="bg-pink-100 px-4 py-2 rounded-lg transition-transform transform hover:scale-105" id="generateButton">Generate</button>
+                </div>
+            </div>
+
+            <!-- section for loading ring -->
+            <div style="display: none;" id="loading-circle" class="load">
+
+            </div>
+            
+
+            <!-- Generate Blog Display Section -->
+            <section class="mt-10 flex-grow">
+                <h2 class="text-xl mb-4 font-semibold">Generated Blog Article</h2>
+                <div id="blogContent" class="mt-2 text-purple-700 space-y-4">
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer class="text-center p-4 text-pink-900 mt-6">
+        Source code in <a href="https://github.com/thienduchuutran" class="text-red-500"> Duc's GitHub</a>
+    </footer>
+
+    <script></script>
+</body>
+</html>
